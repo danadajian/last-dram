@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { trpc } from '../utils/trpc';
+import { trpc } from '../trpc';
 import { httpBatchLink } from '@trpc/client';
-import { PORT } from '../constants';
+import { Platform } from 'react-native';
 
 const getBaseUrl = () => {
-  return `http://localhost:${PORT}`;
+  return Platform.OS === 'web' ? '' : process.env.API_URL;
 };
 
 export const queryClientContext = React.createContext<QueryClient | undefined>(undefined);
