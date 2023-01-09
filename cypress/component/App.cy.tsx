@@ -5,5 +5,7 @@ describe('App', () => {
   it('renders properly', () => {
     cy.intercept('/trpc/myThing*', { body: { result: { data: 'hello' } } });
     cy.mount(<App />);
+
+    cy.findByText('hello').should('be.visible');
   });
 });
