@@ -3,10 +3,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { trpc } from '../trpc';
 import { httpBatchLink } from '@trpc/client';
 import { Platform } from 'react-native';
-import Constants from 'expo-constants';
 
 const getBaseUrl = () => {
-  return Platform.OS === 'web' ? '' : Constants.expoConfig?.extra?.apiUrl;
+  return Platform.OS === 'web' ? '' : process.env.API_URL;
 };
 
 export const queryClientContext = React.createContext<QueryClient | undefined>(undefined);

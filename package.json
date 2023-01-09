@@ -23,6 +23,7 @@
     "@types/react": "18.0.26",
     "@types/react-native": "0.70.8",
     "babel-loader": "8.1.0",
+    "babel-plugin-transform-inline-environment-variables": "0.4.4",
     "babel-preset-react-app": "10.0.1",
     "cors": "2.8.5",
     "eas-cli": "3.1.1",
