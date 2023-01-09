@@ -5,6 +5,7 @@ import * as path from 'path';
 import * as trpcExpress from '@trpc/server/adapters/express';
 import { initTRPC } from '@trpc/server';
 import { z } from 'zod';
+import { PORT } from '../src/constants';
 
 const t = initTRPC.create();
 
@@ -32,7 +33,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../web-build', 'index.html'));
 });
 
-const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });

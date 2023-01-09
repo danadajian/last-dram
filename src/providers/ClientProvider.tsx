@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { trpc } from '../utils/trpc';
 import { httpBatchLink } from '@trpc/client';
+import { PORT } from '../constants';
 
 const getBaseUrl = () => {
-  return `http://localhost:8080`;
+  return `http://localhost:${PORT}`;
 };
 
 export const queryClientContext = React.createContext<QueryClient | undefined>(undefined);

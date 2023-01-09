@@ -1,4 +1,4 @@
-import { trpc } from '../utils/trpc';
+import { trpc } from '../trpc';
 import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { queryClientContext } from '../providers/ClientProvider';
