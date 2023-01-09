@@ -5,12 +5,12 @@ import { Main } from './src/components/Main';
 import { ClientProvider } from './src/providers/ClientProvider';
 
 export default function App() {
-    return (
-        <ClientProvider>
-            <SafeAreaProvider>
-                <StatusBar style="dark" />
-                <Main />
-            </SafeAreaProvider>
-        </ClientProvider>
-    );
+  return (
+    <ClientProvider>
+      <SafeAreaProvider>
+        <StatusBar style="dark" />
+        <Main />
+      </SafeAreaProvider>
+    </ClientProvider>
+  );
 }
