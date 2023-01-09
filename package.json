@@ -7,7 +7,7 @@
     "cy:component": "NODE_ENV=production cypress open --component --browser chrome",
     "format": "prettier --write .",
     "prepare": "npx husky install",
-    "start:ios": "expo start --ios",
+    "start:ios": "API_URL=http://localhost:8080 expo start --ios",
     "start:web": "expo start --web",
     "start:server": "ts-node server",
     "submit:ios": "eas submit --platform ios --latest"

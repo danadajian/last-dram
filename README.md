@@ -8,8 +8,8 @@ LastDram helps you find those bottles that have been open for too long so you ca
 
 COMING SOON
 
-- Add friends on LastDram and view their entire collections!
-- Notify your friends on LastDram when you crack open a bottle or finish a bottle, and vice versa!
+-   Add friends on LastDram and view their entire collections!
+-   Notify your friends on LastDram when you crack open a bottle or finish a bottle, and vice versa!
 
 If you have any issues, please raise a GitHub issue at https://github.com/danadajian/last-dram/issues.
 
