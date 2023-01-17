@@ -7,5 +7,6 @@ export default defineConfig({
       bundler: 'webpack'
     }
   },
+  screenshotOnRunFailure: false,
   video: false
 });
