@@ -6,14 +6,18 @@ module.exports = async function (env, argv) {
   // Process any JS outside of the app with Babel.
   // Unlike the application JS, we only compile the standard ES features.
   config.module.rules.push({
-    test: /\.(js|mjs)$/,
+    test: /\.(js|mjs|tsx?)$/,
     exclude: /@babel(?:\/|\\{1,2})runtime/,
     loader: require.resolve('babel-loader'),
     options: {
       babelrc: false,
       configFile: false,
       compact: false,
-      presets: [[require.resolve('babel-preset-react-app/dependencies'), { helpers: true }]],
+      presets: [
+        [require.resolve('babel-preset-react-app/dependencies'), { helpers: true }],
+        '@babel/preset-react',
+        '@babel/preset-typescript'
+      ],
       cacheDirectory: true,
       // See #6846 for context on why cacheCompression is disabled
       cacheCompression: false,

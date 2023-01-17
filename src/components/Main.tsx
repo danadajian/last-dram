@@ -1,5 +1,5 @@
 import { trpc } from '../trpc';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { queryClientContext } from '../providers/ClientProvider';
 
@@ -8,6 +8,14 @@ export const Main = () => {
 
   return (
     <View style={styles.container}>
+      <TextInput
+        style={{
+          backgroundColor: 'lightgray',
+          height: 40,
+          borderColor: 'gray',
+          borderWidth: 1
+        }}
+      />
       <Text>{data || 'Loading...'}</Text>
       <StatusBar style="auto" />
     </View>
