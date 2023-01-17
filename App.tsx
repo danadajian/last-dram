@@ -4,7 +4,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Main } from './src/components/Main';
 import { ClientProvider } from './src/providers/ClientProvider';
 import { Amplify } from 'aws-amplify';
-import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react-native';
+import { Authenticator, useAuthenticator, withAuthenticator } from '@aws-amplify/ui-react-native';
 
 Amplify.configure({
   Auth: {
@@ -15,17 +15,15 @@ Amplify.configure({
   }
 });
 
-export default function App() {
+function App() {
   return (
-    <Authenticator.Provider>
-      <Authenticator>
-        <ClientProvider>
-          <SafeAreaProvider>
-            <StatusBar style="dark" />
-            <Main />
-          </SafeAreaProvider>
-        </ClientProvider>
-      </Authenticator>
-    </Authenticator.Provider>
+    <ClientProvider>
+      <SafeAreaProvider>
+        <StatusBar style="dark" />
+        <Main />
+      </SafeAreaProvider>
+    </ClientProvider>
   );
 }
+
+export default withAuthenticator(App);
