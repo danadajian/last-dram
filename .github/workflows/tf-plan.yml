@@ -34,6 +34,18 @@ jobs:
           aws-region: us-east-2
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions-iam-role
 
+      - name: Create State Bucket
+        run: |
+          if aws s3api head-bucket --bucket "${BUCKET_NAME}" 2>/dev/null
+          then
+            echo "Bucket exists: $BUCKET_NAME"
+          else
+            echo "Bucket does not exist, creating: ${BUCKET_NAME}"
+            aws s3 mb s3://"${BUCKET_NAME}"
+          fi
+        env:
+          BUCKET_NAME: last-dram-terraform-us-east-2
+
       - name: Setup
         uses: hashicorp/setup-terraform@v1
 
