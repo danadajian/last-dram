@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { trpc } from '../trpc';
 import { httpBatchLink } from '@trpc/client';
-import { Platform } from 'react-native';
-
-const getBaseUrl = () => {
-  return Platform.OS === 'web' ? '' : process.env.API_URL;
-};
+import Constants from 'expo-constants';
 
 export const queryClientContext = React.createContext<QueryClient | undefined>(undefined);
 
@@ -16,7 +12,7 @@ export const ClientProvider = ({ children }: React.PropsWithChildren) => {
     trpc.createClient({
       links: [
         httpBatchLink({
-          url: `${getBaseUrl()}/trpc`
+          url: `${Constants.expoConfig?.extra?.apiUrl ?? ''}/trpc`
         })
       ]
     })

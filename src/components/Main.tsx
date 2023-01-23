@@ -1,25 +1,25 @@
+import React from 'react';
 import { trpc } from '../trpc';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { queryClientContext } from '../providers/ClientProvider';
+import { useAuthenticator } from '@aws-amplify/ui-react-native';
 
 export const Main = () => {
   const { data } = trpc.myThing.useQuery({ message: 'hello world!' }, { context: queryClientContext });
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={{
-          backgroundColor: 'lightgray',
-          height: 40,
-          borderColor: 'gray',
-          borderWidth: 1
-        }}
-      />
       <Text>{data || 'Loading...'}</Text>
+      <SignOutButton />
       <StatusBar style="auto" />
     </View>
   );
+};
+
+const SignOutButton = () => {
+  const { signOut } = useAuthenticator();
+  return <Button title="Sign Out" onPress={signOut} />;
 };
 
 const styles = StyleSheet.create({
