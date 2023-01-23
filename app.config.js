@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 module.exports = {
+  name: 'LastDram',
   extra: {
     apiUrl: process.env.API_URL,
     region: process.env.AWS_REGION,
