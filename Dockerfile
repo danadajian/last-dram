@@ -1,15 +1,9 @@
-FROM node:16.19-slim
+FROM oven/bun
 
-WORKDIR /usr/share/app
+WORKDIR /app
 COPY . .
 
-ARG AWS_REGION
-ARG AWS_USER_POOL_ID
-ARG AWS_USER_POOL_CLIENT_ID
-ENV NODE_ENV "production"
-ENV PORT 8080
+RUN bun install
+RUN bun build:web
 
-RUN npm ci
-RUN npm run build:web
-
-CMD [ "npm", "run", "start:server" ]
+CMD [ "bun", "start" ]

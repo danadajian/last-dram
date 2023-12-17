@@ -3,22 +3,7 @@ import express from 'express';
 import rateLimit from 'express-rate-limit';
 import * as path from 'path';
 import * as trpcExpress from '@trpc/server/adapters/express';
-import { initTRPC } from '@trpc/server';
-import { z } from 'zod';
-
-const t = initTRPC.create();
-
-const router = t.router({
-  myThing: t.procedure
-    .input(
-      z.object({
-        message: z.string().min(1)
-      })
-    )
-    .query(({ input: { message } }) => `Here is the message: ${message}`)
-});
-
-export type AppRouter = typeof router;
+import { router } from './router';
 
 const app = express();
 
@@ -34,5 +19,5 @@ app.get('*', (req, res) => {
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
+  console.log(`App running at http://localhost:${PORT}`);
 });
