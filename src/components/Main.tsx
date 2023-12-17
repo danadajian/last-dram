@@ -2,11 +2,9 @@ import React from 'react';
 import { trpc } from '../trpc';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { queryClientContext } from '../providers/ClientProvider';
-import { useAuthenticator } from '@aws-amplify/ui-react-native';
 
 export const Main = () => {
-  const { data } = trpc.myThing.useQuery({ message: 'hello world!' }, { context: queryClientContext });
+  const { data } = trpc.myThing.useQuery({ message: 'hello world!' });
 
   return (
     <View style={styles.container}>
@@ -18,8 +16,7 @@ export const Main = () => {
 };
 
 const SignOutButton = () => {
-  const { signOut } = useAuthenticator();
-  return <Button title="Sign Out" onPress={signOut} />;
+  return <Button title="Sign Out" />;
 };
 
 const styles = StyleSheet.create({
