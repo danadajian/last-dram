@@ -7,8 +7,8 @@
     "build:web": "expo export:web",
     "cy:component": "NODE_ENV=production cypress open --component --browser chrome",
     "format": "prettier --write .",
-    "start:ios": "EXPO_NO_TYPESCRIPT_SETUP=1 expo start --ios",
-    "start:web": "EXPO_NO_TYPESCRIPT_SETUP=1 expo start --web",
+    "start:ios": "NODE_ENV=development EXPO_NO_TYPESCRIPT_SETUP=1 expo start --ios",
+    "start:web": "NODE_ENV=development EXPO_NO_TYPESCRIPT_SETUP=1 expo start --web",
     "start": "bun src/server.ts",
     "submit:ios": "eas submit --platform ios --latest"
   },
