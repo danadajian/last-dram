@@ -2,7 +2,7 @@ import cors from 'cors';
 import express from 'express';
 import rateLimit from 'express-rate-limit';
 import path from 'path';
-import trpcExpress from '@trpc/server/adapters/express';
+import * as trpcExpress from '@trpc/server/adapters/express';
 import { router } from './router';
 
 const app = express();
