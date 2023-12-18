@@ -1,7 +1,7 @@
 name: Test
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
@@ -17,14 +17,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: .nvmrc
+      - uses: actions/setup-bun@v1
 
       - name: Install
-        run: npm ci
+        run: bun install
 
       - name: Cypress run
-        run: npx cypress run --component --browser chrome
+        run: bunx cypress run --component --browser chrome
         env:
           NODE_ENV: production
