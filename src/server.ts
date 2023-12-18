@@ -8,7 +8,7 @@ import { router } from './router';
 const app = express();
 
 const oneMinute = 60 * 1000;
-app.use(rateLimit({ windowMs: oneMinute, max: 1000 }));
+app.use(rateLimit({ windowMs: oneMinute, limit: 1000 }));
 app.use(cors());
 app.use('/trpc', trpcExpress.createExpressMiddleware({ router }));
 

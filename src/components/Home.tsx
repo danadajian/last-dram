@@ -3,7 +3,7 @@ import { trpc } from '../trpc';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-export const Main = () => {
+export const Home = () => {
   const { data } = trpc.myThing.useQuery({ message: 'hello world!' });
 
   return (

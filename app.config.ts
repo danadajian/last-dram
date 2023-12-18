@@ -1,4 +1,7 @@
-module.exports = {
+import { ExpoConfig, ConfigContext } from 'expo/config';
+
+export default ({ config }: ConfigContext): ExpoConfig => ({
+  ...config,
   name: 'LastDram',
   extra: {
     apiUrl: process.env.API_URL,
@@ -7,7 +10,8 @@ module.exports = {
     userPoolWebClientId: process.env.AWS_USER_POOL_CLIENT_ID,
     eas: {
       projectId: 'd7810d9a-0b36-4926-b882-a60ae58c5246'
-    }
+    },
+    clerkPublishableKey: 'pk_test_dml0YWwtcGVnYXN1cy05OS5jbGVyay5hY2NvdW50cy5kZXYk'
   },
   slug: 'last-dram',
   version: '3.0.0',
@@ -42,4 +46,4 @@ module.exports = {
   runtimeVersion: {
     policy: 'sdkVersion'
   }
-};
+});
