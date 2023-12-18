@@ -29,3 +29,12 @@ jobs:
         run: bun cypress run --component --browser chrome
         env:
           NODE_ENV: production
+#      - name: Setup Expo
+#        uses: expo/expo-github-action@v7
+#        with:
+#          expo-version: latest
+#          eas-version: latest
+#          token: ${{ secrets.EXPO_TOKEN }}
+#
+#      - name: Publish update
+#        run: eas update --auto
