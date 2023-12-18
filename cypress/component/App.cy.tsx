@@ -6,6 +6,6 @@ describe('App', () => {
     cy.intercept('/trpc/myThing*', { body: { result: { data: 'hello' } } });
     cy.mount(<App />);
 
-    cy.findByRole('button', { name: /Sign in/i }).should('be.visible');
+    cy.findByText('hello').should('be.visible');
   });
 });
