@@ -1,0 +1,8 @@
+.expo
+.github
+.husky
+node_modules
+cypress
+terraform
+web-build
+*.md
