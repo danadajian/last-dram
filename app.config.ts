@@ -3,16 +3,6 @@ import { ExpoConfig, ConfigContext } from 'expo/config';
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: 'LastDram',
-  extra: {
-    apiUrl: process.env.API_URL,
-    region: process.env.AWS_REGION,
-    userPoolId: process.env.AWS_USER_POOL_ID,
-    userPoolWebClientId: process.env.AWS_USER_POOL_CLIENT_ID,
-    eas: {
-      projectId: 'd7810d9a-0b36-4926-b882-a60ae58c5246'
-    },
-    clerkPublishableKey: 'pk_test_dml0YWwtcGVnYXN1cy05OS5jbGVyay5hY2NvdW50cy5kZXYk'
-  },
   slug: 'last-dram',
   version: '3.0.0',
   orientation: 'portrait',
@@ -45,5 +35,12 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   owner: 'danadajian',
   runtimeVersion: {
     policy: 'sdkVersion'
+  },
+  extra: {
+    apiUrl: process.env.API_URL,
+    clerkPublishableKey: 'pk_test_dml0YWwtcGVnYXN1cy05OS5jbGVyay5hY2NvdW50cy5kZXYk',
+    eas: {
+      projectId: 'd7810d9a-0b36-4926-b882-a60ae58c5246'
+    }
   }
 });
