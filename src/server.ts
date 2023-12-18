@@ -1,5 +1,5 @@
-import cors from 'cors';
-import express from 'express';
+import * as cors from 'cors';
+import * as express from 'express';
 import rateLimit from 'express-rate-limit';
 import * as path from 'path';
 import * as trpcExpress from '@trpc/server/adapters/express';
@@ -13,7 +13,7 @@ app.use(cors());
 app.use('/trpc', trpcExpress.createExpressMiddleware({ router }));
 
 app.use(express.static(path.resolve(__dirname, '../web-build')));
-app.get('*', (req, res) => {
+app.get('*', (_, res) => {
   res.sendFile(path.resolve(__dirname, '../web-build', 'index.html'));
 });
 
