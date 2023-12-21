@@ -1,6 +1,6 @@
 import React from 'react';
 import { trpc } from '../trpc';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 export const Home = () => {
@@ -9,14 +9,9 @@ export const Home = () => {
   return (
     <View style={styles.container}>
       <Text>{data || 'Loading...'}</Text>
-      <SignOutButton />
       <StatusBar style="auto" />
     </View>
   );
-};
-
-const SignOutButton = () => {
-  return <Button title="Sign Out" />;
 };
 
 const styles = StyleSheet.create({
