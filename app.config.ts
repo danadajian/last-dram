@@ -37,10 +37,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     policy: 'sdkVersion'
   },
   extra: {
-    apiUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:8080' : process.env.API_URL,
+    apiUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : process.env.API_URL,
     clerkPublishableKey: 'pk_test_dml0YWwtcGVnYXN1cy05OS5jbGVyay5hY2NvdW50cy5kZXYk',
     eas: {
       projectId: 'd7810d9a-0b36-4926-b882-a60ae58c5246'
     }
-  }
+  },
+  newArchEnabled: true
 });

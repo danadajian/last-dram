@@ -1,23 +1,21 @@
-import cors from 'cors';
-import express from 'express';
-import rateLimit from 'express-rate-limit';
-import path from 'path';
-import * as trpcExpress from '@trpc/server/adapters/express';
+import { createBunServeHandler } from 'trpc-bun-adapter';
 import { router } from './router';
 
-const app = express();
+const server = Bun.serve(
+  createBunServeHandler({
+    endpoint: '/trpc',
+    router,
+    responseMeta() {
+      return {
+        status: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+        }
+      };
+    }
+  })
+);
 
-const oneMinute = 60 * 1000;
-app.use(rateLimit({ windowMs: oneMinute, limit: 1000 }));
-app.use(cors());
-app.use('/trpc', trpcExpress.createExpressMiddleware({ router }));
-
-app.use(express.static(path.resolve(__dirname, '../web-build')));
-app.get('*', (_, res) => {
-  res.sendFile(path.resolve(__dirname, '../web-build', 'index.html'));
-});
-
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`App running at http://localhost:${PORT}`);
-});
+console.log(`Server running at ${server.url}`);
