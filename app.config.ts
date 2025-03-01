@@ -30,6 +30,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     }
   },
   web: {
+    bundler: 'metro',
+    output: 'static',
     favicon: './assets/favicon.png'
   },
   owner: 'danadajian',
