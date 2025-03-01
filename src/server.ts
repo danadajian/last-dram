@@ -1,6 +1,6 @@
 import { createBunServeHandler } from 'trpc-bun-adapter';
 import { router } from './router';
-import index from '../dist/index.html'
+import index from '../dist/index.html';
 
 const server = Bun.serve({
   routes: {
