@@ -1,8 +1,12 @@
 import { createBunServeHandler } from 'trpc-bun-adapter';
 import { router } from './router';
+import index from '../dist/index.html'
 
-const server = Bun.serve(
-  createBunServeHandler({
+const server = Bun.serve({
+  routes: {
+    '/': index
+  },
+  ...createBunServeHandler({
     endpoint: '/trpc',
     router,
     responseMeta() {
@@ -16,6 +20,6 @@ const server = Bun.serve(
       };
     }
   })
-);
+});
 
 console.log(`Server running at ${server.url}`);

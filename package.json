@@ -1,10 +1,10 @@
 {
   "main": "expo-router/entry",
-  "packageManager": "bun@1.2.3",
+  "packageManager": "bun@1.2.4",
   "scripts": {
     "build:docker": "docker build . --tag last-dram && docker-compose up",
     "build:ios": "eas build --platform ios",
-    "build:web": "expo export --platform web",
+    "build:web": "expo export --platform web && bun scripts/replace-html-paths.ts",
     "cy:component": "NODE_ENV=production cypress open --component --browser chrome",
     "dev:web": "bun --hot src/server.ts & bun start:web",
     "dev:ios": "bun --hot src/server.ts & bun start:ios",
