@@ -4,6 +4,6 @@ WORKDIR /app
 COPY . .
 
 RUN bun install --production
-RUN bun build:web || echo ""
+RUN bun build:web
 
 CMD [ "bun", "start" ]

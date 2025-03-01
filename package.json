@@ -1,10 +1,10 @@
 {
-  "main": "src/main.ts",
+  "main": "expo-router/entry",
   "packageManager": "bun@1.2.3",
   "scripts": {
     "build:docker": "docker build . --tag last-dram && docker-compose up",
     "build:ios": "eas build --platform ios",
-    "build:web": "expo export:web",
+    "build:web": "expo export --platform web",
     "cy:component": "NODE_ENV=production cypress open --component --browser chrome",
     "dev:web": "bun --hot src/server.ts & bun start:web",
     "dev:ios": "bun --hot src/server.ts & bun start:ios",
@@ -40,7 +40,7 @@
   "devDependencies": {
     "@testing-library/cypress": "10.0.3",
     "@types/testing-library__cypress": "5.0.13",
-    "bun-types": "1.2.3",
+    "bun-types": "1.2.4",
     "cypress": "14.0.3",
     "husky": "9.1.7",
     "prettier": "3.5.2",
