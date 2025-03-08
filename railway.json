@@ -1,8 +1,12 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "buildCommand": "bun build:web"
+  },
   "deploy": {
-    "numReplicas": 1,
+    "startCommand": "bun start",
     "healthcheckPath": "/health",
+    "numReplicas": 1,
     "restartPolicyType": "ON_FAILURE"
   }
 }
