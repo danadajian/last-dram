@@ -32,7 +32,6 @@ jobs:
 
       - name: Web build
         run: bun build:web
-
 #      - name: Setup Expo
 #        uses: expo/expo-github-action@v7
 #        with:

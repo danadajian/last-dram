@@ -16,6 +16,9 @@ const server = Bun.serve({
       };
     }
   }),
+  routes: {
+    '/health': new Response('healthy')
+  },
   port: 3000
 });
 
