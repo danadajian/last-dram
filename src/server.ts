@@ -19,7 +19,7 @@ const server = Bun.serve({
   routes: {
     '/health': new Response('healthy')
   },
-  port: 3000
+  port: 'PORT' in process.env ? Number(process.env.PORT) : 3000
 });
 
 console.log(`Server running at ${server.url}`);
