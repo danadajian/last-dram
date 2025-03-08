@@ -29,7 +29,6 @@ jobs:
         run: bun cypress run --component --browser chrome
         env:
           NODE_ENV: production
-
 #      - name: Setup Expo
 #        uses: expo/expo-github-action@v7
 #        with:

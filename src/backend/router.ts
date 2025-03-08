@@ -12,5 +12,3 @@ export const router = t.router({
     )
     .query(({ input: { message } }) => `Here is the message: ${message}`)
 });
-
-export type AppRouter = typeof router;

@@ -7,12 +7,11 @@
     "build:web": "NODE_ENV=production expo export --platform web && bun scripts/replace-html-paths.ts",
     "cy:component": "NODE_ENV=production cypress open --component --browser chrome",
     "dev": "bun --hot src/server.ts",
-    "dev:web": "bun dev & bun start:web",
-    "dev:ios": "bun dev & bun start:ios",
+    "dev:web": "NODE_ENV=development expo start --web",
+    "dev:ios": "NODE_ENV=development expo start --ios",
     "format": "prettier --write .",
-    "start:ios": "NODE_ENV=development expo start --ios",
-    "start:web": "NODE_ENV=development expo start --web",
-    "start": "bun src/server.ts",
+    "start:backend": "bun src/backend/server.ts",
+    "start:web": "bun src/frontend/server.ts",
     "submit:ios": "eas submit --platform ios --latest"
   },
   "dependencies": {

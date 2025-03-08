@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { App } from '../../src/App';
+import { App } from '../../src/frontend/App';
 import { MockProviders } from '../mock-providers';
 
 describe('App', () => {
