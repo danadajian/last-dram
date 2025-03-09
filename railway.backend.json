@@ -1,11 +1,10 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
-    "nixpacksPlan": {
-      "providers": ["node"]
-    }
+    "builder": "RAILPACK"
   },
   "deploy": {
+    "startCommand": "bun start:backend",
     "healthcheckPath": "/health",
     "numReplicas": 1,
     "restartPolicyType": "ON_FAILURE"
