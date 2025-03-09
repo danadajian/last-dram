@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   ci:
@@ -26,7 +29,8 @@ jobs:
       - name: Run frontend tests
         run: bun cypress run --component --browser chrome
 
-      - name: Update Database Schema
+      - if: github.event_name == 'push'
+        name: Update Database Schema
         run: bun drizzle-kit push
         env:
           POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
