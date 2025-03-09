@@ -3,7 +3,6 @@ import { router } from './router';
 
 const server = Bun.serve({
   ...createBunServeHandler({
-    endpoint: '/trpc',
     router,
     responseMeta() {
       return {

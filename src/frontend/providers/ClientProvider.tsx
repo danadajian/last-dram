@@ -10,7 +10,7 @@ export const ClientProvider = ({ children }: React.PropsWithChildren) => {
     trpc.createClient({
       links: [
         httpBatchLink({
-          url: `${Constants.expoConfig?.extra?.apiUrl ?? ''}/trpc`
+          url: Constants.expoConfig?.extra?.apiUrl ? new URL(Constants.expoConfig.extra.apiUrl) : ''
         })
       ]
     })

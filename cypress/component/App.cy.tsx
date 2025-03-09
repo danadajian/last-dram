@@ -4,7 +4,7 @@ import { MockProviders } from '../mock-providers';
 
 describe('App', () => {
   it('renders properly', () => {
-    cy.intercept('/trpc/myThing*', { body: { result: { data: 'hello' } } });
+    cy.intercept('/myThing*', { body: { result: { data: 'hello' } } });
     cy.mount(
       <MockProviders>
         <App />
