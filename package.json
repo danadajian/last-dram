@@ -7,8 +7,8 @@
     "build:web": "expo export --platform web && bun scripts/replace-html-paths.ts",
     "cy:component": "cypress open --component --browser chrome",
     "dev:backend": "bun --hot src/backend/server.ts",
-    "dev:web": "API_URL=http://localhost:8080 expo start --web --clear",
-    "dev:ios": "API_URL=http://localhost:8080 expo start --ios",
+    "dev:web": "API_URL=http://localhost:3000 expo start --web --clear",
+    "dev:ios": "API_URL=http://localhost:3000 expo start --ios",
     "format": "prettier --write .",
     "start:backend": "bun src/backend/server.ts",
     "submit:ios": "eas submit --platform ios --latest"
@@ -22,6 +22,8 @@
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
     "bun-types": "1.2.4",
+    "drizzle-orm": "0.40.0",
+    "drizzle-kit": "0.30.5",
     "eas-cli": "15.0.12",
     "expo": "52.0.37",
     "expo-router": "4.0.17",
@@ -35,7 +37,7 @@
     "react-native-web": "0.19.13",
     "trpc-bun-adapter": "1.2.2",
     "typescript": "5.7.3",
-    "zod": "3.24.2"
+    "valibot": "1.0.0-rc.3"
   },
   "devDependencies": {
     "@testing-library/cypress": "10.0.3",

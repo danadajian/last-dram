@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import * as v from 'valibot';
 import { initTRPC } from '@trpc/server';
 
 const t = initTRPC.create();
@@ -6,9 +6,11 @@ const t = initTRPC.create();
 export const router = t.router({
   myThing: t.procedure
     .input(
-      z.object({
-        message: z.string().min(1)
-      })
+      v.parser(
+        v.object({
+          message: v.string()
+        })
+      )
     )
     .query(({ input: { message } }) => `Here is the message: ${message}`)
 });
