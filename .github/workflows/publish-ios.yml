@@ -1,0 +1,36 @@
+name: Publish iOS
+
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        type: string
+        description: The EAS command to run
+        required: true
+        options:
+          - build
+          - update
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: package.json
+
+      - name: Install
+        run: bun install
+
+      - name: Setup Expo
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Publish build
+        run: eas ${{ inputs.command }} --non-interactive ${{ inputs.command == 'update' && '--auto' || '' }}
