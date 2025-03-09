@@ -1,7 +1,6 @@
 {
   "cli": {
-    "version": ">= 5.9.2",
-    "promptToConfigurePushNotifications": false
+    "appVersionSource": "remote"
   },
   "build": {
     "development": {
@@ -11,9 +10,8 @@
     "preview": {
       "distribution": "internal"
     },
-    "production": {}
-  },
-  "submit": {
-    "production": {}
+    "production": {
+      "autoIncrement": true
+    }
   }
 }
