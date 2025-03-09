@@ -1,7 +1,6 @@
 import { defineConfig as defineCypressConfig } from 'cypress';
 import { defineConfig as defineViteConfig } from 'vite';
 
-const development = process.env.NODE_ENV === 'development';
 const extensions = ['.web.tsx', '.tsx', '.web.ts', '.ts', '.web.jsx', '.jsx', '.web.js', '.js', '.css', '.json', '.mjs'];
 
 export default defineCypressConfig({
@@ -13,9 +12,9 @@ export default defineCypressConfig({
         clearScreen: true,
         define: {
           global: 'window',
-          __DEV__: JSON.stringify(development),
-          DEV: JSON.stringify(development),
-          'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+          __DEV__: JSON.stringify(true),
+          DEV: JSON.stringify(true),
+          'process.env.NODE_ENV': JSON.stringify('development')
         },
         resolve: {
           extensions: extensions,
