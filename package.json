@@ -6,7 +6,7 @@
     "build:ios": "eas build --platform ios",
     "build:web": "NODE_ENV=production expo export --platform web && bun scripts/replace-html-paths.ts",
     "cy:component": "NODE_ENV=production cypress open --component --browser chrome",
-    "dev": "bun --hot src/server.ts",
+    "dev:backend": "bun --hot src/backend/server.ts",
     "dev:web": "NODE_ENV=development expo start --web",
     "dev:ios": "NODE_ENV=development expo start --ios",
     "format": "prettier --write .",
