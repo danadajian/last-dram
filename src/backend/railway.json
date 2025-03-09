@@ -1,5 +1,10 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "nixpacksPlan": {
+      "providers": ["node"]
+    }
+  },
   "deploy": {
     "healthcheckPath": "/health",
     "numReplicas": 1,
