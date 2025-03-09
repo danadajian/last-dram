@@ -2,10 +2,11 @@ import index from '../../dist/index.html';
 
 const server = Bun.serve({
   routes: {
-    '/*': index,
+    '/': index,
     '/health': new Response('healthy')
   },
-  port: 'PORT' in process.env ? Number(process.env.PORT) : 3000
+  port: 'PORT' in process.env ? Number(process.env.PORT) : 3000,
+  development: true
 });
 
 console.log(`Server running at ${server.url}`);
