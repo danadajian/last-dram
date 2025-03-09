@@ -11,7 +11,7 @@
     "dev:ios": "API_URL=http://localhost:8080 expo start --ios",
     "format": "prettier --write .",
     "start:backend": "bun src/backend/server.ts",
-    "start:web": "bun src/frontend/server.ts",
+    "start:web": "bun build:web && bun src/frontend/server.ts",
     "submit:ios": "eas submit --platform ios --latest"
   },
   "dependencies": {
