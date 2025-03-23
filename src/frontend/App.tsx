@@ -4,6 +4,7 @@ import { Home } from './components/Home';
 import { ClientProvider } from './providers/ClientProvider';
 import React, { useMemo } from 'react';
 import { useUser } from '@clerk/clerk-expo';
+import { StyleSheet, View } from 'react-native';
 
 export const App = () => {
   const userResult = useUser();
@@ -14,8 +15,19 @@ export const App = () => {
     <ClientProvider>
       <SafeAreaProvider>
         <StatusBar style="dark" />
-        <Home userId={user.id} />
+        <View style={styles.container}>
+          <Home userId={user.id} />
+        </View>
       </SafeAreaProvider>
     </ClientProvider>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+});

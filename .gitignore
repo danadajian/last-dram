@@ -108,3 +108,5 @@ web-build/
 
 # Terraform
 .terraform
+
+tsconfig.tsbuildinfo

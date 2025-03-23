@@ -5,10 +5,11 @@ import { StatusBar } from 'expo-status-bar';
 
 export const Home = ({ userId }: { userId: string }) => {
   const { data } = trpc.getCollection.useQuery({ userId });
+  if (!data) return <Text style={styles.item}>Your collection is loading...</Text>;
+  if (!data.length) return <Text style={styles.item}>Your collection is empty!</Text>;
 
   return (
-    <View style={styles.container}>
-      {!data?.length ? <Text style={styles.item}>Your collection is empty!</Text> : null}
+    <View>
       <FlatList data={data} renderItem={({ item }) => <Text style={styles.item}>{item.name}</Text>} />
       <StatusBar style="auto" />
     </View>
@@ -16,12 +17,6 @@ export const Home = ({ userId }: { userId: string }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
   item: {
     padding: 10,
     fontSize: 18,
