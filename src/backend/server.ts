@@ -1,11 +1,12 @@
 import { createBunServeHandler } from 'trpc-bun-adapter';
 import { router } from './router';
+import { environmentVariables } from './env';
 
 const server = Bun.serve({
   routes: {
     '/health': new Response('healthy')
   },
-  port: 3000,
+  port: environmentVariables.PORT || 3000,
   ...createBunServeHandler({
     router,
     responseMeta() {

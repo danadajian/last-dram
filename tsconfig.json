@@ -3,6 +3,7 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
+    "incremental": true,
     "jsx": "react-native",
     "lib": ["dom", "esnext"],
     "module": "esnext",

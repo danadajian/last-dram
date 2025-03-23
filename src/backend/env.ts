@@ -1,7 +1,8 @@
 import * as v from 'valibot';
 
 export const envSchema = v.object({
-  POSTGRES_URL: v.string()
+  POSTGRES_URL: v.string(),
+  PORT: v.optional(v.string())
 });
 const result = v.safeParse(envSchema, process.env);
 if (!result.success) {

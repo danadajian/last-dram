@@ -4,13 +4,13 @@ import { MockProviders } from '../mock-providers';
 
 describe('App', () => {
   it('renders properly', () => {
-    cy.intercept('/myThing*', { body: { result: { data: 'hello' } } });
+    cy.intercept('/getCollection*', { body: { result: { data: [{ name: 'Test Bottle' }] } } });
     cy.mount(
       <MockProviders>
         <App />
       </MockProviders>
     );
 
-    cy.findByText('hello').should('be.visible');
+    cy.findByText('Test Bottle').should('be.visible');
   });
 });

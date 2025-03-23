@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { ClerkProvider } from '@clerk/clerk-react';
+import { ClerkProvider } from '@clerk/clerk-expo';
 import { InitialState } from '@clerk/types';
 
 const mockClerkState = {

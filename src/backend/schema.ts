@@ -9,9 +9,9 @@ export const bottles = pgTable('bottles', {
   createdAt: timestamp('createdAt').notNull().defaultNow()
 });
 
-export const collectedBottles = pgTable('collectedBottles', {
+export const userBottles = pgTable('userBottles', {
   id: uuid('id').primaryKey().defaultRandom(),
   bottleId: uuid('bottleId').notNull(),
-  userId: uuid('userId').notNull(),
+  userId: varchar('userId', { length: 256 }).notNull(),
   createdAt: timestamp('createdAt').notNull().defaultNow()
 });
