@@ -16,9 +16,9 @@
   "dependencies": {
     "@clerk/clerk-expo": "2.8.4",
     "@expo/metro-runtime": "4.0.1",
-    "@trpc/client": "10.45.2",
-    "@trpc/react-query": "10.45.2",
-    "@trpc/server": "10.45.2",
+    "@trpc/client": "11.1.0",
+    "@trpc/react-query": "11.1.0",
+    "@trpc/server": "11.1.0",
     "@types/react": "18.3.18",
     "@types/react-dom": "18.3.5",
     "bun-types": "1.2.4",
