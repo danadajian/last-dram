@@ -24,7 +24,7 @@
     "bun-types": "1.2.4",
     "drizzle-orm": "0.40.0",
     "drizzle-kit": "0.30.5",
-    "eas-cli": "15.0.14",
+    "eas-cli": "16.3.2",
     "expo": "52.0.37",
     "expo-router": "4.0.17",
     "expo-secure-store": "14.0.1",
