@@ -5,9 +5,10 @@
       "dependencies": {
         "@clerk/clerk-expo": "2.9.14",
         "@expo/metro-runtime": "4.0.1",
-        "@trpc/client": "10.45.2",
-        "@trpc/react-query": "10.45.2",
-        "@trpc/server": "10.45.2",
+        "@tanstack/react-query": "5.74.4",
+        "@trpc/client": "11.1.0",
+        "@trpc/react-query": "11.1.0",
+        "@trpc/server": "11.1.0",
         "@types/react": "18.3.18",
         "@types/react-dom": "18.3.5",
         "bun-types": "1.2.10",
@@ -640,19 +641,19 @@
 
     "@swc/helpers": ["@swc/helpers@0.5.15", "", { "dependencies": { "tslib": "^2.8.0" } }, "sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g=="],
 
-    "@tanstack/query-core": ["@tanstack/query-core@4.36.1", "", {}, "sha512-DJSilV5+ytBP1FbFcEJovv4rnnm/CokuVvrBEtW/Va9DvuJ3HksbXUJEpI0aV1KtuL4ZoO9AVE6PyNLzF7tLeA=="],
+    "@tanstack/query-core": ["@tanstack/query-core@5.74.4", "", {}, "sha512-YuG0A0+3i9b2Gfo9fkmNnkUWh5+5cFhWBN0pJAHkHilTx6A0nv8kepkk4T4GRt4e5ahbtFj2eTtkiPcVU1xO4A=="],
 
-    "@tanstack/react-query": ["@tanstack/react-query@4.36.1", "", { "dependencies": { "@tanstack/query-core": "4.36.1", "use-sync-external-store": "^1.2.0" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0", "react-native": "*" }, "optionalPeers": ["react-dom", "react-native"] }, "sha512-y7ySVHFyyQblPl3J3eQBWpXZkliroki3ARnBKsdJchlgt7yJLRDUcf4B8soufgiYt3pEQIkBWBx1N9/ZPIeUWw=="],
+    "@tanstack/react-query": ["@tanstack/react-query@5.74.4", "", { "dependencies": { "@tanstack/query-core": "5.74.4" }, "peerDependencies": { "react": "^18 || ^19" } }, "sha512-mAbxw60d4ffQ4qmRYfkO1xzRBPUEf/72Dgo3qqea0J66nIKuDTLEqQt0ku++SDFlMGMnB6uKDnEG1xD/TDse4Q=="],
 
     "@testing-library/cypress": ["@testing-library/cypress@10.0.3", "", { "dependencies": { "@babel/runtime": "^7.14.6", "@testing-library/dom": "^10.1.0" }, "peerDependencies": { "cypress": "^12.0.0 || ^13.0.0 || ^14.0.0" } }, "sha512-TeZJMCNtiS59cPWalra7LgADuufO5FtbqQBYxuAgdX6ZFAR2D9CtQwAG8VbgvFcchW3K414va/+7P4OkQ80UVg=="],
 
     "@testing-library/dom": ["@testing-library/dom@10.4.0", "", { "dependencies": { "@babel/code-frame": "^7.10.4", "@babel/runtime": "^7.12.5", "@types/aria-query": "^5.0.1", "aria-query": "5.3.0", "chalk": "^4.1.0", "dom-accessibility-api": "^0.5.9", "lz-string": "^1.5.0", "pretty-format": "^27.0.2" } }, "sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ=="],
 
-    "@trpc/client": ["@trpc/client@10.45.2", "", { "peerDependencies": { "@trpc/server": "10.45.2" } }, "sha512-ykALM5kYWTLn1zYuUOZ2cPWlVfrXhc18HzBDyRhoPYN0jey4iQHEFSEowfnhg1RvYnrAVjNBgHNeSAXjrDbGwg=="],
+    "@trpc/client": ["@trpc/client@11.1.0", "", { "peerDependencies": { "@trpc/server": "11.1.0", "typescript": ">=5.7.2" } }, "sha512-Q3pL4p7AddxI/ZJTEFo1utKSdasDFjZPECIPsKDkthEt52k530JkYVltTdLkYFKrNWXKKBo8MN7NwchelczoRw=="],
 
-    "@trpc/react-query": ["@trpc/react-query@10.45.2", "", { "peerDependencies": { "@tanstack/react-query": "^4.18.0", "@trpc/client": "10.45.2", "@trpc/server": "10.45.2", "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-BAqb9bGZIscroradlNx+Cc9522R+idY3BOSf5z0jHUtkxdMbjeGKxSSMxxu7JzoLqSIEC+LVzL3VvF8sdDWaZQ=="],
+    "@trpc/react-query": ["@trpc/react-query@11.1.0", "", { "peerDependencies": { "@tanstack/react-query": "^5.67.1", "@trpc/client": "11.1.0", "@trpc/server": "11.1.0", "react": ">=18.2.0", "react-dom": ">=18.2.0", "typescript": ">=5.7.2" } }, "sha512-qdqKdFM8hVy/YSBCg1/3VO+IgB6Nbul3Fk1SA3lefGf0bkYZdWVVyKab8HBAfOWlMsuRufhVLPdKYmnjzBrK9g=="],
 
-    "@trpc/server": ["@trpc/server@10.45.2", "", {}, "sha512-wOrSThNNE4HUnuhJG6PfDRp4L2009KDVxsd+2VYH8ro6o/7/jwYZ8Uu5j+VaW+mOmc8EHerHzGcdbGNQSAUPgg=="],
+    "@trpc/server": ["@trpc/server@11.1.0", "", { "peerDependencies": { "typescript": ">=5.7.2" } }, "sha512-uAJ7ikejeujVkf53XFJ/0W8nr7bDjul+Szk5Rsepq97Hb/WS1RkRXdyX4KqAyCE9b1vDFCJVJwSxiIZdRtbTZQ=="],
 
     "@tsconfig/node10": ["@tsconfig/node10@1.0.11", "", {}, "sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw=="],
 
